@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Collections | House of Manzuma</title>
+    <meta name="description" content="Discover the collections of House of Manzuma.">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        .collections-page {
+            padding-top: 90px;
+            background: var(--ivory);
+            color: var(--ink);
+        }
+
+        .brand-wordmark {
+            color: var(--gold-light);
+            font-family: var(--serif);
+            font-size: 19px;
+            line-height: .9;
+            letter-spacing: .06em;
+        }
+
+        .brand-wordmark small {
+            display: block;
+            margin-top: 7px;
+            font-family: var(--sans);
+            font-size: 7px;
+            letter-spacing: .22em;
+        }
+
+        .collections-hero {
+            min-height: 62vh;
+            padding: 120px 6% 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .collections-hero h1 {
+            margin: 22px 0 30px;
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: clamp(70px, 11vw, 145px);
+            font-weight: 300;
+            line-height: .82;
+            letter-spacing: -.045em;
+        }
+
+        .collections-hero h1 em {
+            display: block;
+        }
+
+        .collections-hero > p:last-child {
+            max-width: 500px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .collection-list {
+            padding-bottom: 80px;
+        }
+
+        .fold-collection {
+            border-top: 1px solid var(--line-light);
+            background: var(--ivory);
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .fold-header {
+            width: 100%;
+            min-height: 130px;
+            padding: 20px 6%;
+            display: grid;
+            grid-template-columns: 65px minmax(0, 1fr) 45px;
+            align-items: center;
+            gap: 15px;
+            border: 0;
+            background: var(--ivory);
+            color: var(--ink);
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .fold-number {
+            color: var(--gold);
+            font-family: var(--serif);
+            font-size: 21px;
+        }
+
+        .fold-title {
+            color: var(--ink) !important;
+            font-family: var(--serif);
+            font-size: clamp(35px, 5.5vw, 75px);
+            font-weight: 300;
+            line-height: 1;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .fold-plus {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line-light);
+            border-radius: 50%;
+            font-size: 23px;
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .fold-collection.active .fold-plus {
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .fold-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .45s ease;
+        }
+
+        .fold-collection.active .fold-content {
+            grid-template-rows: 1fr;
+        }
+
+        .fold-content-inner {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .collection-description {
+            padding: 0 6% 35px calc(6% + 80px);
+        }
+
+        .collection-description p {
+            max-width: 570px;
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .collection-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--gold);
+            color: var(--ink);
+            font-size: 10px;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .collection-bottom {
+            padding: 125px 20px;
+            background: var(--ink);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .collection-bottom h2 {
+            margin: 22px auto 35px;
+            font-family: var(--serif);
+            font-size: clamp(60px, 9vw, 110px);
+            font-weight: 300;
+            line-height: .85;
+        }
+
+        .site-footer a,
+        .footer a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 760px) {
+            .collections-page {
+                padding-top: 75px;
+            }
+
+            .collections-hero {
+                min-height: 55vh;
+                padding: 95px 20px 60px;
+            }
+
+            .collections-hero h1 {
+                font-size: clamp(62px, 16vw, 90px);
+            }
+
+            .fold-header {
+                min-height: 100px;
+                padding: 18px 16px;
+                grid-template-columns: 30px minmax(0, 1fr) 34px;
+                gap: 8px;
+            }
+
+            .fold-title {
+                font-size: clamp(25px, 7vw, 39px);
+                overflow-wrap: anywhere;
+            }
+
+            .fold-number {
+                font-size: 14px;
+            }
+
+            .fold-plus {
+                width: 31px;
+                height: 31px;
+                font-size: 19px;
+            }
+
+            .collection-description {
+                padding: 0 20px 30px 54px;
+            }
+
+            .collection-bottom {
+                padding: 90px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED HEADER -->
+    <header class="header site-header">
+        <div class="header-inner">
+
+            <a class="brand" href="../index.html" aria-label="House of Manzuma Home">
+                <span class="brand-wordmark">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Collections</a>
+                <a href="../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../index.html#house">The House</a>
+                <a href="../CONTACT/index.html">Contact</a>
+            </nav>
+
+            <button class="dots-button" id="dotsButton"
+                    type="button" aria-label="Social media"
+                    aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <button class="menu-button" id="menuButton"
+                    type="button" aria-label="Open collections"
+                    aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- MOBILE COLLECTION MENU -->
+    <nav class="mobile-navigation" id="mobileNavigation"
+         aria-label="Collection navigation">
+
+        <div class="mobile-nav-inner">
+            <div class="mobile-section-title">Explore Collections</div>
+            <a href="../../index.html">Home</a>
+            <a href="MENS%20WEAR/index.html">Men's Wear</a>
+            <a href="SENATOR/index.html">Senator</a>
+            <a href="AGBADA%20WEARS/index.html">Agbada Wears</a>
+            <a href="KAFTAN/index.html">Kaftan</a>
+            <a href="ASO%20EBI/index.html">Aso Ebi</a>
+        </div>
+    </nav>
+
+
+    <!-- SOCIAL MENU -->
+    <nav class="social-navigation" id="socialNavigation"
+         aria-label="Social media links">
+
+        <div class="social-inner">
+            <span class="social-label">Follow the House</span>
+            <!-- Replace # with the official profile URLs -->
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+    </nav>
+
+
+    <main class="collections-page">
+
+        <section class="collections-hero">
+            <p class="eyebrow">HOUSE OF MANZUMA · THE COLLECTIONS</p>
+
+            <h1>All<br><em>Collections.</em></h1>
+
+            <p>
+                Discover considered silhouettes, exceptional detailing
+                and contemporary African craftsmanship. Select a collection
+                to enter its own world of style.
+            </p>
+        </section>
+
+
+        <section class="collection-list" aria-label="Our collections">
+
+            <article class="fold-collection">
+                <button class="fold-header" type="button" aria-expanded="false">
+                    <span class="fold-number">01</span>
+                    <span class="fold-title">MEN'S WEAR</span>
+                    <span class="fold-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="fold-content">
+                    <div class="fold-content-inner">
+                        <div class="collection-description">
+                            <p>Modern menswear shaped by confident silhouettes, thoughtful construction and understated sophistication.</p>
+                            <a class="collection-link" href="MENS%20WEAR/index.html">Explore Men's Wear <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="fold-collection">
+                <button class="fold-header" type="button" aria-expanded="false">
+                    <span class="fold-number">02</span>
+                    <span class="fold-title">SENATOR</span>
+                    <span class="fold-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="fold-content">
+                    <div class="fold-content-inner">
+                        <div class="collection-description">
+                            <p>Refined Senator styles balancing cultural identity, clean lines and effortless presence.</p>
+                            <a class="collection-link" href="SENATOR/index.html">Explore Senator <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="fold-collection">
+                <button class="fold-header" type="button" aria-expanded="false">
+                    <span class="fold-number">03</span>
+                    <span class="fold-title">AGBADA WEARS</span>
+                    <span class="fold-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="fold-content">
+                    <div class="fold-content-inner">
+                        <div class="collection-description">
+                            <p>A celebration of grandeur and heritage, expressed through distinctive volume and meticulous detailing.</p>
+                            <a class="collection-link" href="AGBADA%20WEARS/index.html">Explore Agbada Wears <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="fold-collection">
+                <button class="fold-header" type="button" aria-expanded="false">
+                    <span class="fold-number">04</span>
+                    <span class="fold-title">KAFTAN</span>
+                    <span class="fold-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="fold-content">
+                    <div class="fold-content-inner">
+                        <div class="collection-description">
+                            <p>Relaxed elegance, elevated proportions and considered craftsmanship in every silhouette.</p>
+                            <a class="collection-link" href="KAFTAN/index.html">Explore Kaftan <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="fold-collection">
+                <button class="fold-header" type="button" aria-expanded="false">
+                    <span class="fold-number">05</span>
+                    <span class="fold-title">ASO EBI</span>
+                    <span class="fold-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="fold-content">
+                    <div class="fold-content-inner">
+                        <div class="collection-description">
+                            <p>Distinctive occasionwear designed for meaningful celebrations and memorable entrances.</p>
+                            <a class="collection-link" href="ASO%20EBI/index.html">Explore Aso Ebi <span>↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+
+        <section class="collection-bottom">
+            <p class="eyebrow">HOUSE OF MANZUMA</p>
+            <h2>The art<br>of presence.</h2>
+            <a href="../CONTACT/index.html" class="outline-button">
+                Enquire with the House <span>↗</span>
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- SHARED FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <a href="../index.html" class="brand-wordmark">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </a>
+                <p>
+                    A contemporary fashion house where heritage,
+                    craftsmanship and modern expression meet.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <span>Explore</span>
+                <a href="../index.html">Home</a>
+                <a href="index.html">All Collections</a>
+                <a href="../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../index.html#house">The House</a>
+                <a href="../CONTACT/index.html">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <span>Collections</span>
+                <a href="MENS%20WEAR/index.html">Men's Wear</a>
+                <a href="SENATOR/index.html">Senator</a>
+                <a href="AGBADA%20WEARS/index.html">Agbada Wears</a>
+                <a href="KAFTAN/index.html">Kaftan</a>
+                <a href="ASO%20EBI/index.html">Aso Ebi</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span class="current-year"></span> House of Manzuma</span>
+            <span class="goa-signature">Designed by <strong>GOA Digital Innovation</strong></span>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".current-year").forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+    <script src="../script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agbada Designs | House of Manzuma</title>
+    <meta name="description" content="Explore the Agbada collection by House of Manzuma, where heritage, craftsmanship and contemporary elegance meet.">
+
+    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           HOUSE OF MANZUMA
+           INDIVIDUAL COLLECTION PAGE
+        ===================================================== */
+
+        .detail-page {
+            padding-top: 90px;
+            background: var(--ivory, #f5f1e8);
+            color: var(--ink, #16253a);
+        }
+
+        .detail-hero {
+            min-height: 62vh;
+            padding: 140px 6% 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-hero .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .detail-hero h1 {
+            max-width: 1100px;
+            margin: 20px 0 30px;
+            color: var(--ink, #16253a);
+            font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+            font-size: clamp(65px, 11vw, 145px);
+            font-weight: 300;
+            line-height: .9;
+            letter-spacing: -.04em;
+            overflow-wrap: anywhere;
+        }
+
+        .detail-hero > p:last-child {
+            max-width: 540px;
+            margin: 0;
+            color: var(--muted, #707786);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* COLLECTION GALLERY */
+
+        .detail-gallery {
+            padding: 0 5% 120px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 8px;
+        }
+
+        .detail-gallery figure {
+            position: relative;
+            min-width: 0;
+            height: 700px;
+            margin: 0;
+            overflow: hidden;
+            background: var(--cream, #ebe5d8);
+        }
+
+        .detail-gallery figure:nth-child(4n + 1) {
+            height: 820px;
+        }
+
+        .detail-gallery img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform .8s ease;
+        }
+
+        .detail-gallery figure:hover img {
+            transform: scale(1.035);
+        }
+
+        /* Keep gallery images from overflowing on smaller screens. */
+
+        .detail-gallery img {
+            max-width: 100%;
+        }
+
+        /* ENQUIRY SECTION */
+
+        .detail-cta {
+            padding: 110px 20px;
+            background: var(--ink, #16253a);
+            color: var(--white, #fff);
+            text-align: center;
+        }
+
+        .detail-cta h2 {
+            margin: 20px 0 35px;
+            font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+            font-size: clamp(55px, 8vw, 100px);
+            font-weight: 300;
+            line-height: .9;
+        }
+
+        .detail-cta .eyebrow {
+            color: var(--gold-light, #dfc27e);
+        }
+
+        .detail-cta .outline-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            min-height: 46px;
+            padding: 13px 20px;
+            border: 1px solid var(--gold, #c5a15d);
+            color: var(--white, #fff);
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        .detail-cta .outline-button:hover {
+            background: var(--gold, #c5a15d);
+            color: var(--ink, #16253a);
+        }
+
+        /* WORDMARK FALLBACK */
+
+        .brand-wordmark {
+            display: inline-block;
+            color: var(--gold-light, #dfc27e);
+            font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+            font-size: 19px;
+            line-height: .9;
+            text-decoration: none;
+        }
+
+        .brand-wordmark small {
+            display: block;
+            margin-top: 7px;
+            font-family: var(--sans, Inter, Arial, sans-serif);
+            font-size: 7px;
+            letter-spacing: .2em;
+        }
+
+        /* FOOTER SUPPORT */
+
+        .site-footer a {
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px 24px;
+        }
+
+        .goa-signature strong {
+            font-weight: 600;
+        }
+
+        /* Never leave important content faint or hidden. */
+
+        .detail-page .reveal,
+        .detail-page .reveal.visible,
+        .detail-hero,
+        .detail-gallery,
+        .detail-cta {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* TABLET AND MOBILE */
+
+        @media (max-width: 900px) {
+            .detail-gallery figure {
+                height: 580px;
+            }
+
+            .detail-gallery figure:nth-child(4n + 1) {
+                height: 680px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .detail-page {
+                padding-top: 75px;
+            }
+
+            .detail-hero {
+                min-height: 50vh;
+                padding: 100px 20px 60px;
+            }
+
+            .detail-hero h1 {
+                font-size: clamp(55px, 14vw, 85px);
+                line-height: .92;
+            }
+
+            .detail-hero > p:last-child {
+                font-size: 12px;
+            }
+
+            .detail-gallery {
+                padding: 0 12px 75px;
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .detail-gallery figure,
+            .detail-gallery figure:nth-child(4n + 1) {
+                height: auto;
+                aspect-ratio: 4 / 5;
+            }
+
+            .detail-cta {
+                padding: 85px 20px;
+            }
+
+            .detail-cta h2 {
+                font-size: clamp(52px, 13vw, 76px);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .detail-hero h1 {
+                font-size: 50px;
+            }
+
+            .detail-gallery {
+                padding-right: 8px;
+                padding-left: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .detail-gallery img,
+            .detail-cta .outline-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SHARED HEADER
+    ===================================================== -->
+
+    <header class="header site-header">
+        <div class="header-inner">
+
+            <a class="brand" href="../../index.html"
+               aria-label="House of Manzuma Home">
+                <span class="brand-wordmark">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="../index.html">All Collections</a>
+                <a href="../../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../../index.html#the-house">The House</a>
+                <a href="../../CONTACT/index.html">Contact</a>
+            </nav>
+
+            <button
+                class="dots-button"
+                id="dotsButton"
+                type="button"
+                aria-label="Open social links"
+                aria-expanded="false"
+                aria-controls="socialNavigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open collections menu"
+                aria-expanded="false"
+                aria-controls="mobileNavigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+         HOME + COLLECTION CATEGORIES
+    ===================================================== -->
+
+    <nav class="mobile-navigation"
+         id="mobileNavigation"
+         aria-label="Mobile navigation">
+
+        <div class="mobile-nav-inner">
+
+            <div class="mobile-section-title">
+                Explore the House
+            </div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html">All Collections</a>
+            <a href="../MENS%20WEAR/index.html">Men's Wear</a>
+            <a href="../SENATOR/index.html">Senator</a>
+            <a href="../AGBADA%20WEARS/index.html" aria-current="page">Agbada Wears</a>
+            <a href="../KAFTAN/index.html">Kaftan</a>
+            <a href="../ASO%20EBI/index.html">Aso Ebi</a>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         SOCIAL MENU
+         REPLACE # WITH YOUR REAL SOCIAL PROFILE URLS
+    ===================================================== -->
+
+    <nav class="social-navigation"
+         id="socialNavigation"
+         aria-label="Social media links">
+
+        <div class="social-inner">
+
+            <span class="social-label">Follow the House</span>
+
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">X</a>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN COLLECTION CONTENT
+    ===================================================== -->
+
+    <main class="detail-page">
+
+        <section class="detail-hero">
+
+            <p class="eyebrow">
+                HOUSE OF MANZUMA · THE COLLECTIONS
+            </p>
+
+            <h1>Agbada<br>Designs.</h1>
+
+            <p>
+                A celebration of heritage, presence and exceptional
+                craftsmanship. Discover Agbada designs shaped by
+                distinctive silhouettes, considered details and
+                contemporary African elegance.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             COLLECTION GALLERY
+
+             Keep these images inside:
+             ALL_COLLECTIONS/AGBADA WEARS/images/
+
+             Replace the filenames below if your images use
+             different names. Add or remove figure blocks
+             according to the number of images you have.
+        ================================================== -->
+
+        <section class="detail-gallery"
+                 aria-label="Agbada designs gallery">
+
+            <figure>
+                <img
+                    src="images/01.jpg"
+                    alt="House of Manzuma Agbada design"
+                    loading="lazy">
+            </figure>
+
+            <figure>
+                <img
+                    src="images/02.jpg"
+                    alt="Agbada outfit featuring refined tailoring"
+                    loading="lazy">
+            </figure>
+
+            <figure>
+                <img
+                    src="images/03.jpg"
+                    alt="Contemporary Agbada fashion by House of Manzuma"
+                    loading="lazy">
+            </figure>
+
+            <figure>
+                <img
+                    src="images/04.jpg"
+                    alt="Close-up of Agbada craftsmanship and detailing"
+                    loading="lazy">
+            </figure>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT CALL TO ACTION
+        ================================================== -->
+
+        <section class="detail-cta">
+
+            <p class="eyebrow">HOUSE OF MANZUMA</p>
+
+            <h2>Made to be<br>remembered.</h2>
+
+            <a class="outline-button"
+               href="../../CONTACT/index.html">
+                Enquire with the House <span aria-hidden="true">↗</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         SHARED FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="../../index.html"
+                   class="brand-wordmark"
+                   aria-label="House of Manzuma Home">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </a>
+
+                <p>
+                    A contemporary fashion house where heritage,
+                    craftsmanship and modern expression meet.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <span>Explore</span>
+
+                <a href="../../index.html">Home</a>
+                <a href="../index.html">All Collections</a>
+                <a href="../../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../../index.html#the-house">The House</a>
+                <a href="../../CONTACT/index.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <span>Collections</span>
+
+                <a href="../MENS%20WEAR/index.html">Men's Wear</a>
+                <a href="../SENATOR/index.html">Senator</a>
+                <a href="../AGBADA%20WEARS/index.html">Agbada Wears</a>
+                <a href="../KAFTAN/index.html">Kaftan</a>
+                <a href="../ASO%20EBI/index.html">Aso Ebi</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span class="current-year"></span>
+                House of Manzuma. All rights reserved.
+            </span>
+
+            <span class="goa-signature">
+                Designed by <strong>GOA Digital Innovation</strong>
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        document.querySelectorAll(".current-year").forEach((element) => {
+            element.textContent = new Date().getFullYear();
+        });
+    </script>
+
+    <script src="../../script.js"></script>
+
+</body>
+</html>

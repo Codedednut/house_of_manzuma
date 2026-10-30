@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Men's Wear | House of Manzuma</title>
+    <meta name="description" content="Discover the Men's Wear collection by House of Manzuma.">
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        .detail-page {
+            padding-top: 90px;
+            background: var(--ivory);
+            color: var(--ink);
+        }
+
+        .detail-hero {
+            min-height: 62vh;
+            padding: 150px 6% 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-hero h1 {
+            margin: 20px 0 30px;
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: clamp(65px, 11vw, 145px);
+            font-weight: 300;
+            line-height: .83;
+            letter-spacing: -.04em;
+        }
+
+        .detail-hero > p:last-child {
+            max-width: 520px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .detail-gallery {
+            padding: 0 5% 120px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 6px;
+        }
+
+        .detail-gallery figure {
+            height: 700px;
+            overflow: hidden;
+            background: var(--cream);
+        }
+
+        .detail-gallery figure:nth-child(4n + 1) {
+            height: 820px;
+        }
+
+        .detail-gallery img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform .8s ease;
+        }
+
+        .detail-gallery figure:hover img {
+            transform: scale(1.035);
+        }
+
+        .detail-cta {
+            padding: 110px 20px;
+            background: var(--ink);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .detail-cta h2 {
+            margin: 20px 0 35px;
+            font-family: var(--serif);
+            font-size: clamp(55px, 8vw, 100px);
+            font-weight: 300;
+            line-height: .9;
+        }
+
+        .detail-cta .outline-button {
+            color: var(--white);
+        }
+
+        .brand-wordmark {
+            color: var(--gold-light);
+            font-family: var(--serif);
+            font-size: 19px;
+            line-height: .9;
+        }
+
+        .brand-wordmark small {
+            display: block;
+            margin-top: 7px;
+            font-family: var(--sans);
+            font-size: 7px;
+            letter-spacing: .2em;
+        }
+
+        @media (max-width: 760px) {
+            .detail-page {
+                padding-top: 75px;
+            }
+
+            .detail-hero {
+                min-height: 55vh;
+                padding: 110px 20px 60px;
+            }
+
+            .detail-hero h1 {
+                font-size: clamp(58px, 15vw, 85px);
+            }
+
+            .detail-gallery {
+                padding: 0 12px 75px;
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .detail-gallery figure,
+            .detail-gallery figure:nth-child(4n + 1) {
+                height: 560px;
+            }
+
+            .detail-cta {
+                padding: 85px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED HEADER -->
+    <header class="header site-header">
+        <div class="header-inner">
+
+            <a class="brand" href="../../index.html" aria-label="House of Manzuma Home">
+                <span class="brand-wordmark">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="../index.html">Collections</a>
+                <a href="../../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../../index.html#house">The House</a>
+                <a href="../../CONTACT/index.html">Contact</a>
+            </nav>
+
+            <button class="dots-button" id="dotsButton" type="button"
+                    aria-label="Social media" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <button class="menu-button" id="menuButton" type="button"
+                    aria-label="Open collections" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- MOBILE COLLECTION MENU -->
+    <nav class="mobile-navigation" id="mobileNavigation"
+         aria-label="Collection navigation">
+        <div class="mobile-nav-inner">
+            <div class="mobile-section-title">Explore Collections</div>
+            <a href="../../index.html">Home</a>
+            <a href="../MENS%20WEAR/index.html">Men's Wear</a>
+            <a href="../SENATOR/index.html">Senator</a>
+            <a href="../AGBADA%20WEARS/index.html">Agbada Wears</a>
+            <a href="../KAFTAN/index.html">Kaftan</a>
+            <a href="../ASO%20EBI/index.html">Aso Ebi</a>
+        </div>
+    </nav>
+
+
+    <!-- SOCIAL MENU -->
+    <nav class="social-navigation" id="socialNavigation"
+         aria-label="Social media links">
+        <div class="social-inner">
+            <span class="social-label">Follow the House</span>
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+    </nav>
+
+
+    <main class="detail-page">
+
+        <!-- CHANGE THE TITLE AND DESCRIPTION FOR EACH COLLECTION -->
+        <section class="detail-hero">
+            <p class="eyebrow">HOUSE OF MANZUMA · THE COLLECTIONS</p>
+            <h1>Men's Wear.</h1>
+            <p>
+                Modern menswear shaped by confident silhouettes,
+                thoughtful construction and understated sophistication.
+                Explore the collection and discover the details.
+            </p>
+        </section>
+
+
+        <!--
+          ADD YOUR REAL IMAGE FILENAMES BELOW.
+          These images must be inside this page's own images folder.
+          Duplicate a figure block for every additional image.
+        -->
+        <section class="detail-gallery" aria-label="Men's Wear gallery">
+
+            <figure>
+                <img src="images/01.jpg"
+                     alt="House of Manzuma Men's Wear design"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/02.jpg"
+                     alt="House of Manzuma Men's Wear detail"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/03.jpg"
+                     alt="House of Manzuma contemporary menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/04.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+                        <figure>
+                <img src="images/05.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+                        <figure>
+                <img src="images/06.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+                        <figure>
+                <img src="images/07.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/08.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/09.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/11.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/10.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/12.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/13.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/14.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/15.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+            <figure>
+                <img src="images/16.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+
+            <figure>
+                <img src="images/17.jpg"
+                     alt="House of Manzuma tailored menswear"
+                     loading="lazy">
+            </figure>
+
+        </section>
+
+
+        <section class="detail-cta">
+            <p class="eyebrow">HOUSE OF MANZUMA</p>
+            <h2>Made to be<br>remembered.</h2>
+            <a class="outline-button" href="../../CONTACT/index.html">
+                Enquire with the House <span>↗</span>
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- SHARED FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <a href="../../index.html" class="brand-wordmark">
+                    HOUSE OF<br>MANZUMA
+                    <small>THE ART OF PRESENCE</small>
+                </a>
+                <p>
+                    A contemporary fashion house where heritage,
+                    craftsmanship and modern expression meet.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <span>Explore</span>
+                <a href="../../index.html">Home</a>
+                <a href="../index.html">All Collections</a>
+                <a href="../../SHOWREEL%20COLLECTIONS/index.html">Showreel</a>
+                <a href="../../index.html#house">The House</a>
+                <a href="../../CONTACT/index.html">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <span>Collections</span>
+                <a href="../MENS%20WEAR/index.html">Men's Wear</a>
+                <a href="../SENATOR/index.html">Senator</a>
+                <a href="../AGBADA%20WEARS/index.html">Agbada Wears</a>
+                <a href="../KAFTAN/index.html">Kaftan</a>
+                <a href="../ASO%20EBI/index.html">Aso Ebi</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span class="current-year"></span> House of Manzuma</span>
+            <span class="goa-signature">Designed by <strong>GOA Digital Innovation</strong></span>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".current-year").forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+    <script src="../../script.js"></script>
+
+</body>
+</html>

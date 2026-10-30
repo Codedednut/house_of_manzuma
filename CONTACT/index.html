@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Contact | House of Manzuna
+    </title>
+
+    <meta
+        name="description"
+        content="Contact House of Manzuna for appointments, bespoke commissions, collaborations and fashion enquiries."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
+
+    <style>
+
+        .contact-page {
+
+            background: var(--paper);
+        }
+
+
+        .contact-hero {
+
+            min-height: 75vh;
+
+            padding:
+                190px 50px 100px;
+
+            max-width: 1500px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .contact-hero h1 {
+
+            max-width: 1000px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(85px, 13vw, 185px);
+
+            font-weight: 300;
+
+            line-height: .72;
+        }
+
+
+        .contact-hero h1 em {
+
+            color: var(--terracotta);
+        }
+
+
+        .contact-hero p:last-child {
+
+            max-width: 500px;
+
+            margin-top: 40px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        .contact-details {
+
+            background: var(--ink);
+
+            color: white;
+
+            padding:
+                120px 50px;
+        }
+
+
+        .contact-grid {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 80px;
+        }
+
+
+        .contact-block span {
+
+            display: block;
+
+            margin-bottom: 18px;
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: .2em;
+
+            text-transform: uppercase;
+        }
+
+
+        .contact-block h2 {
+
+            font-family: var(--serif);
+
+            font-size: 55px;
+
+            font-weight: 300;
+        }
+
+
+        .contact-block p {
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+        }
+
+
+        .contact-block a {
+
+            color: white;
+
+            font-family: var(--serif);
+
+            font-size: 28px;
+
+            text-decoration: none;
+        }
+
+
+        .contact-end {
+
+            padding:
+                150px 30px;
+
+            text-align: center;
+        }
+
+
+        .contact-end h2 {
+
+            max-width: 900px;
+
+            margin:
+                auto auto 40px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(65px, 9vw, 130px);
+
+            line-height: .8;
+
+            font-weight: 300;
+        }
+
+
+        .contact-end em {
+
+            color: var(--terracotta);
+        }
+
+
+        @media(max-width:700px) {
+
+            .contact-hero {
+
+                padding:
+                    140px 20px 80px;
+            }
+
+
+            .contact-hero h1 {
+
+                font-size: 82px;
+            }
+
+
+            .contact-details {
+
+                padding:
+                    90px 20px;
+            }
+
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+            }
+
+
+            .contact-block h2 {
+
+                font-size: 45px;
+            }
+
+
+            .contact-end {
+
+                padding:
+                    110px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <a
+            href="../index.html"
+            class="brand"
+            aria-label="House of Manzuna Home"
+        >
+
+            <img
+                src="../LOGO.JPG"
+                alt="House of Manzuna"
+            >
+
+        </a>
+
+
+        <nav class="desktop-navigation">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../ALL_COLLECTIONS/index.html">
+                All Collections
+            </a>
+
+            <a href="../SHOWREEL%20COLLECTIONS/index.html">
+                Showreel
+            </a>
+
+            <a href="../index.html#the-house">
+                The House
+            </a>
+
+            <a href="index.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button
+            class="dots-button"
+            id="dotsButton"
+            type="button"
+            aria-label="Open social links"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open collections"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- SOCIAL PANEL -->
+
+    <div
+        class="social-panel"
+        id="socialPanel"
+    >
+
+        <div class="social-panel-inner">
+
+            <span class="panel-label">
+                Follow The House
+            </span>
+
+            <a href="#" target="_blank" rel="noopener">
+                Instagram
+            </a>
+
+            <a href="#" target="_blank" rel="noopener">
+                Facebook
+            </a>
+
+            <a href="#" target="_blank" rel="noopener">
+                TikTok
+            </a>
+
+            <a href="#" target="_blank" rel="noopener">
+                X / Twitter
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE COLLECTIONS -->
+
+    <div
+        class="mobile-collection-panel"
+        id="mobileCollectionPanel"
+    >
+
+        <div class="mobile-collection-inner">
+
+            <div class="mobile-panel-heading">
+
+                <span>
+                    House of Manzuna
+                </span>
+
+                <strong>
+                    Collections
+                </strong>
+
+            </div>
+            
+            <a href="../index.html">Home</a>
+
+            <a href="../ALL_COLLECTIONS/index.html#mens-wear">
+
+                <span>01</span>
+                MEN'S WEAR
+
+            </a>
+
+
+            <a href="../ALL_COLLECTIONS/index.html#senator">
+
+                <span>02</span>
+                SENATOR
+
+            </a>
+
+
+            <a href="../ALL_COLLECTIONS/index.html#agbada-wears">
+
+                <span>03</span>
+                AGBADA WEARS
+
+            </a>
+
+
+            <a href="../ALL_COLLECTIONS/index.html#kaftan">
+
+                <span>04</span>
+                KAFTAN
+
+            </a>
+
+
+            <a href="../ALL_COLLECTIONS/index.html#aso-ebi">
+
+                <span>05</span>
+                ASO EBI OUTFIT
+
+            </a>
+
+
+            <a href="../ALL_COLLECTIONS/index.html">
+
+                <span>06</span>
+                VIEW ALL COLLECTIONS
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="contact-page">
+
+
+    <section class="contact-hero">
+
+        <p class="eyebrow">
+            HOUSE OF MANZUNA — CONTACT
+        </p>
+
+
+        <h1>
+            Let's create<br>
+            something <em>remarkable.</em>
+        </h1>
+
+
+        <p>
+            For appointments, bespoke commissions,
+            fashion enquiries, collaborations and
+            general enquiries, connect with the House.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT DETAILS
+    ====================================================== -->
+
+    <section class="contact-details">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-block">
+
+                <span>
+                    General Enquiries
+                </span>
+
+                <h2>
+                    The House
+                </h2>
+
+                <p>
+                    For general enquiries and information,
+                    please reach out through our preferred
+                    contact channel.
+                </p>
+
+            </div>
+
+
+            <div class="contact-block">
+
+                <span>
+                    Email
+                </span>
+
+                <a href="mailto:info@houseofmanzuna.com">
+                    info@houseofmanzuna.com
+                </a>
+
+                <br><br><br>
+
+
+                <span>
+                    Phone
+                </span>
+
+                <p>
+                    080xxxxxxx
+                </p>
+
+            </div>
+
+
+            <div class="contact-block">
+
+                <span>
+                    Appointments
+                </span>
+
+                <h2>
+                    By Request
+                </h2>
+
+                <p>
+                    Private appointments and consultations
+                    are available by arrangement.
+                </p>
+
+            </div>
+
+
+            <div class="contact-block">
+
+                <span>
+                    Social
+                </span>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         END CTA
+    ====================================================== -->
+
+    <section class="contact-end">
+
+        <h2>
+            Your presence<br>
+            starts <em>here.</em>
+        </h2>
+
+
+        <a
+            href="../ALL_COLLECTIONS/index.html"
+            class="dark-link"
+        >
+
+            Explore Collections
+
+            <span>→</span>
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="../LOGO.JPG"
+                alt="House of Manzuna"
+            >
+
+            <p>
+                Contemporary African fashion shaped
+                by identity, craftsmanship and presence.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Explore
+            </span>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../ALL_COLLECTIONS/index.html">
+                Collections
+            </a>
+
+            <a href="../SHOWREEL%20COLLECTIONS/index.html">
+                Showreel
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Connect
+            </span>
+
+            <a href="index.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 House of Manzuna
+        </span>
+
+        <span>
+            All Rights Reserved
+        </span>
+
+    </div>
+
+
+    <div class="goa-signature">
+
+        Crafted & powered by
+        <strong>
+            GOA Digital Innovation
+        </strong>
+
+    </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>
